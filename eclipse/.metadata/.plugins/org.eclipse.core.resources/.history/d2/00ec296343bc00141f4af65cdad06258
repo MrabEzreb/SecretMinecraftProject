@@ -1,0 +1,13 @@
+package com.ezreb.enviroglass.blocks;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+
+public class BasicBlock extends Block {
+
+	protected BasicBlock(Material arg0) {
+		super(arg0);
+		setBlockName("Basic Block").set
+	}
+
+}

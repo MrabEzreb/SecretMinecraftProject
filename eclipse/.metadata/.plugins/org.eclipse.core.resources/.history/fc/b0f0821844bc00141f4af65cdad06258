@@ -1,0 +1,8 @@
+package com.ezreb.enviroglass.blocks;
+
+import net.minecraft.tileentity.TileEntity;
+
+public class TileTutorial extends TileEntity {
+	
+}
+

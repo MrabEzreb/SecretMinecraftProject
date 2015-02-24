@@ -1,0 +1,29 @@
+package com.ezreb.enviroglass;
+
+import net.minecraft.init.Blocks;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import enviromine.core.EM_Settings;
+
+@Mod(modid = EnviroGlass.MODID, version = EnviroGlass.VERSION)
+public class EnviroGlass {
+    public static final String MODID = "EnviroGlass";
+    public static final String VERSION = "-1.0";
+    
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
+    	System.out.println(EM_Settings.ModID);
+    }
+    @EventHandler
+    public void init(FMLInitializationEvent event) {
+		
+    }
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+    	
+    }
+
+}

@@ -1,0 +1,15 @@
+package com.ezreb.enviroglass.items;
+
+import net.minecraft.item.ItemArmor;
+
+public class EnviroGlass extends ItemArmor {
+
+	public EnviroGlass() {
+		super(ArmorMaterial.CHAIN, 0, 0);
+		setMaxDamage(0);
+		setMaxStackSize(1);
+		setHasSubtypes(true);
+		setUnlocalizedName("enviroglass");
+	}
+	
+}

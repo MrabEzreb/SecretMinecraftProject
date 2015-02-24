@@ -1,0 +1,22 @@
+package com.ezreb.enviroglass.blocks;
+
+import net.minecraft.block.BlockContainer;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.tileentity.TileEntity;
+
+public class BlockTileEntity extends BlockContainer {
+
+    public BlockTileEntity() {
+        super(Material.iron);
+        this.setBlockName("tutorialBlock");
+        this.setBlockTextureName("enviroglass:tutorialBlock");
+        this.setHardness(12.0F);
+        this.setHarvestLevel("pickaxe", 2);
+        this.setCreativeTab(CreativeTabs.tabDecorations);
+    }
+    @Override
+    public TileEntity createNewTileEntity(World world, int meta) {
+        return new TileTutorial();
+    }
+}
