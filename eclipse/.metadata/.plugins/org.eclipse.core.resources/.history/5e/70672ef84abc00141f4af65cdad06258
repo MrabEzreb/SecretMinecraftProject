@@ -1,0 +1,7 @@
+package com.ezreb.enviroglass.tiles;
+
+import net.minecraft.tileentity.TileEntity;
+
+public class GetImplant extends TileEntity {
+
+}

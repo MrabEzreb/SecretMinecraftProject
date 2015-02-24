@@ -1,0 +1,41 @@
+package com.ezreb.enviroglass.blocks;
+
+import com.ezreb.enviroglass.tiles.GetImplant;
+
+import net.minecraft.block.BlockContainer;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ChatComponentText;
+import net.minecraft.world.World;
+
+public class BlockScannerTE extends BlockContainer {
+
+	public BlockScannerTE() {
+        super(Material.iron);
+        this.setBlockName("ImplantScanner");
+        this.setBlockTextureName("enviroglass:tutorialBlock");
+        this.setHardness(12.0F);
+        this.setHarvestLevel("pickaxe", 2);
+        this.setCreativeTab(CreativeTabs.tabRedstone);
+    }
+    @Override
+    public TileEntity createNewTileEntity(World world, int meta) {
+    	GetImplant gi = new GetImplant();
+        return gi;
+    }
+    @Override
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
+        if (!world.isRemote && world.getTileEntity(x,y,z) != null && world.getTileEntity(x,y,z) instanceof GetImplant) {
+            NBTTagCompound nbt = new NBTTagCompound();
+            player.writeToNBT(nbt);
+            player.addChatMessage(new ChatComponentText(nbt.toString()));
+            if(nbt.hasKey("ImplantType")) {
+            	player.addChatMessage(new ChatComponentText("Your current implant is of type "+nbt.getString("ImplantType")));
+            }
+        }
+        return true;
+    }
+}

@@ -1,6 +1,7 @@
 package com.ezreb.enviroglass;
 
 import com.ezreb.enviroglass.blocks.ModBlocks;
+import com.ezreb.enviroglass.items.ModItems;
 
 import net.minecraft.init.Blocks;
 import cpw.mods.fml.common.Loader;
@@ -20,6 +21,7 @@ public class EnviroGlass {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
     	ModBlocks.init();
+    	ModItems.init();
     }
     @EventHandler
     public void init(FMLInitializationEvent event) {

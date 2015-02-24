@@ -1,0 +1,47 @@
+package com.ezreb.enviroglass.items;
+
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTBase;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ChatComponentText;
+import net.minecraft.world.World;
+
+public class Implant extends Item {
+	
+	public enum ImplantType {
+		
+		DATA("Data");
+		
+		public String name;
+		private ImplantType(String name) {
+			this.name = name;
+		}
+		
+	}
+	public ImplantType type;
+	public NBTTagCompound data = new NBTTagCompound();
+	public Implant(ImplantType type) {
+		this.type = type;
+		setUnlocalizedName("implant"+type.name);
+	}
+	public void setData() {
+		data.setString("ImplantType", this.type.name);
+	}
+	@Override
+	public boolean onItemUse(ItemStack arg0, EntityPlayer arg1,
+			World arg2, int arg3, int arg4, int arg5, int arg6, float arg7,
+			float arg8, float arg9) {
+		// TODO Auto-generated method stub
+		arg1.writeToNBT(this.data);
+		setData();
+		arg1.addChatMessage(new ChatComponentText("Implant type: "+data.getString("ImplantType")));
+		arg1.readFromNBT(this.data);
+		arg1.writeToNBT(this.data);
+		arg1.addChatMessage(new ChatComponentText("Implant type: "+data.getString("ImplantType")));
+		arg1.addChatMessage(new ChatComponentText("Added Implant"));
+		return true;
+	}
+}

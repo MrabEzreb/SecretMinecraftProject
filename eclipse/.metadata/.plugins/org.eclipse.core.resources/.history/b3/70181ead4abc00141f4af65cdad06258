@@ -1,0 +1,8 @@
+package com.ezreb.enviroglass.items;
+
+public class DataImplant extends Implant {
+
+	public DataImplant() {
+		super(ImplantType.DATA);
+	}
+}

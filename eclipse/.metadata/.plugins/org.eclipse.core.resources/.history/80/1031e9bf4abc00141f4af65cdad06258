@@ -1,0 +1,21 @@
+package com.ezreb.enviroglass.items;
+
+import net.minecraft.item.Item;
+
+public class Implant extends Item {
+	
+	public enum ImplantType {
+		
+		DATA("Data");
+		
+		public String name;
+		private ImplantType(String name) {
+			this.name = name;
+		}
+		
+	}
+	public ImplantType type;
+	public Implant(ImplantType type) {
+		this.type = type;
+	}
+}

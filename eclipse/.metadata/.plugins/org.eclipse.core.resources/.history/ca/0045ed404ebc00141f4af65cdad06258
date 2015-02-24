@@ -1,0 +1,16 @@
+package com.ezreb.enviroglass.items;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
+public class DataImplant extends Implant {
+
+	public DataImplant() {
+		super(ImplantType.DATA);
+		setCreativeTab(CreativeTabs.tabRedstone);
+		setTextureName("enviroglass:tutorialBlock");
+		setUnlocalizedName("Data Implant")
+	}
+}
